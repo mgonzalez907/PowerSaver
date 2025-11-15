@@ -62,10 +62,28 @@ public class appliance{
         }
         else{
             System.out.printf("Error:\nThe input give is not a valid currency(USD): EXAMPLE 1.23\n");
+            System.exit(0);
         }
 
         System.out.println("Enter the name of an appliance you wish to track");
+        keyboard.next();
         String name = keyboard.nextLine();
+
+        System.out.println("Enter the Voltage(V) your device uses: ");
+        double volts = keyboard.nextDouble();
+
+        System.out.println("Enter the Current your device uses in Amps (1A=1000mA): ");
+        double amps = keyboard.nextDouble();
+
+
+        System.out.println("how many hours on average is this appliance on per day\nFormat(HH:MM)");
+        keyboard.nextLine();//clean keyboard
+        String time = keyboard.nextLine();
+        String[] timeParse = time.split("\\s*:\\s*");
+        //convert to int
+        int hours = Integer.parseInt(timeParse[0]);
+        int min = Integer.parseInt(timeParse[1]);
+
 
     }
 }
